@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mhh.hz.dao.DouyinChildDao">
+
+    <resultMap type="com.mhh.hz.entity.DouyinChild" id="DouyinChildMap">
+        <result property="id" column="id" jdbcType="VARCHAR"/>
+        <result property="fkId" column="fk_id" jdbcType="VARCHAR"/>
+        <result property="orderId" column="order_id" jdbcType="VARCHAR"/>
+        <result property="shopId" column="shop_id" jdbcType="VARCHAR"/>
+        <result property="pid" column="pid" jdbcType="VARCHAR"/>
+        <result property="finalStatus" column="final_status" jdbcType="INTEGER"/>
+        <result property="openId" column="open_id" jdbcType="VARCHAR"/>
+        <result property="productId" column="product_id" jdbcType="VARCHAR"/>
+        <result property="productName" column="product_name" jdbcType="VARCHAR"/>
+        <result property="productPic" column="product_pic" jdbcType="VARCHAR"/>
+        <result property="comboId" column="combo_id" jdbcType="VARCHAR"/>
+        <result property="comboAmount" column="combo_amount" jdbcType="NUMERIC"/>
+        <result property="comboNum" column="combo_num" jdbcType="INTEGER"/>
+        <result property="code" column="code" jdbcType="VARCHAR"/>
+        <result property="specDesc" column="spec_desc" jdbcType="VARCHAR"/>
+        <result property="postAddr" column="post_addr" jdbcType="VARCHAR"/>
+        <result property="postCode" column="post_code" jdbcType="VARCHAR"/>
+        <result property="postReceiver" column="post_receiver" jdbcType="VARCHAR"/>
+        <result property="postTel" column="post_tel" jdbcType="VARCHAR"/>
+        <result property="buyerWords" column="buyer_words" jdbcType="VARCHAR"/>
+        <result property="sellerWords" column="seller_words" jdbcType="VARCHAR"/>
+        <result property="shopOrderTagUi" column="shop_order_tag_ui" jdbcType="VARCHAR"/>
+        <result property="logisticsId" column="logistics_id" jdbcType="VARCHAR"/>
+        <result property="logisticsCompanyCode" column="logistics_company_code" jdbcType="VARCHAR"/>
+        <result property="logisticsCode" column="logistics_code" jdbcType="VARCHAR"/>
+        <result property="logisticsTime" column="logistics_time" jdbcType="VARCHAR"/>
+        <result property="receiptTime" column="receipt_time" jdbcType="VARCHAR"/>
+        <result property="orderType" column="order_type" jdbcType="INTEGER"/>
+        <result property="preSaleType" column="pre_sale_type" jdbcType="INTEGER"/>
+        <result property="createTime" column="create_time" jdbcType="VARCHAR"/>
+        <result property="updateTime" column="update_time" jdbcType="VARCHAR"/>
+        <result property="expShipTime" column="exp_ship_time" jdbcType="VARCHAR"/>
+        <result property="cancelReason" column="cancel_reason" jdbcType="VARCHAR"/>
+        <result property="payType" column="pay_type" jdbcType="INTEGER"/>
+        <result property="payTime" column="pay_time" jdbcType="TIMESTAMP"/>
+        <result property="postAmount" column="post_amount" jdbcType="NUMERIC"/>
+        <result property="couponAmount" column="coupon_amount" jdbcType="NUMERIC"/>
+        <result property="shopCouponAmount" column="shop_coupon_amount" jdbcType="NUMERIC"/>
+        <result property="couponMetaId" column="coupon_meta_id" jdbcType="VARCHAR"/>
+        <result property="couponInfo" column="coupon_info" jdbcType="VARCHAR"/>
+        <result property="totalAmount" column="total_amount" jdbcType="NUMERIC"/>
+        <result property="platformDirectReductionPlatformAmount" column="platform_direct_reduction_platform_amount" jdbcType="NUMERIC"/>
+        <result property="isComment" column="is_comment" jdbcType="INTEGER"/>
+        <result property="urgeCnt" column="urge_cnt" jdbcType="INTEGER"/>
+        <result property="bType" column="b_type" jdbcType="INTEGER"/>
+        <result property="subBType" column="sub_b_type" jdbcType="INTEGER"/>
+        <result property="cBiz" column="c_biz" jdbcType="INTEGER"/>
+        <result property="isInsurance" column="is_insurance" jdbcType="VARCHAR"/>
+        <result property="cType" column="c_type" jdbcType="VARCHAR"/>
+        <result property="cosRatio" column="cos_ratio" jdbcType="VARCHAR"/>
+        <result property="userName" column="user_name" jdbcType="VARCHAR"/>
+        <result property="warehouseId" column="warehouse_id" jdbcType="VARCHAR"/>
+        <result property="outWarehouseId" column="out_warehouse_id" jdbcType="VARCHAR"/>
+        <result property="warehouseSupplier" column="warehouse_supplier" jdbcType="VARCHAR"/>
+        <result property="shopFullCampaign" column="shop_full_campaign" jdbcType="VARCHAR"/>
+        <result property="shopCampaignId" column="shop_campaign_id" jdbcType="VARCHAR"/>
+        <result property="shopFullAmount" column="shop_full_amount" jdbcType="NUMERIC"/>
+        <result property="platformFullAmount" column="platform_full_amount" jdbcType="NUMERIC"/>
+        <result property="platformFullCampaign" column="platform_full_campaign" jdbcType="VARCHAR"/>
+        <result property="platformCampaignId" column="platform_campaign_id" jdbcType="VARCHAR"/>
+        <result property="costSource" column="cost_source" jdbcType="VARCHAR"/>
+        <result property="promotionAmount" column="promotion_amount" jdbcType="NUMERIC"/>
+        <result property="sourceType" column="source_type" jdbcType="INTEGER"/>
+        <result property="shippedNum" column="shipped_num" jdbcType="INTEGER"/>
+        <result property="itemIds" column="item_ids" jdbcType="VARCHAR"/>
+        <result property="adjustAmount" column="adjust_amount" jdbcType="NUMERIC"/>
+        <result property="dDate" column="d_date" jdbcType="TIMESTAMP"/>
+        <result property="ts" column="ts" jdbcType="TIMESTAMP"/>
+        <result property="version" column="version" jdbcType="INTEGER"/>
+        <result property="campaignInfo" column="campaign_info" jdbcType="VARCHAR"/>
+        <result property="orderStatus" column="order_status" jdbcType="INTEGER"/>
+        <result property="outProductId" column="out_product_id" jdbcType="VARCHAR"/>
+        <result property="outSkuId" column="out_sku_id" jdbcType="VARCHAR"/>
+        <result property="allianceInfo" column="alliance_info" jdbcType="VARCHAR"/>
+        <result property="authorId" column="author_id" jdbcType="VARCHAR"/>
+        <result property="authorName" column="author_name" jdbcType="VARCHAR"/>
+        <result property="themeType" column="theme_type" jdbcType="INTEGER"/>
+        <result property="appId" column="app_id" jdbcType="VARCHAR"/>
+        <result property="roomId" column="room_id" jdbcType="VARCHAR"/>
+        <result property="contentId" column="content_id" jdbcType="VARCHAR"/>
+        <result property="videoId" column="video_id" jdbcType="VARCHAR"/>
+        <result property="originId" column="origin_id" jdbcType="VARCHAR"/>
+        <result property="cid" column="cid" jdbcType="VARCHAR"/>
+        <result property="pageId" column="page_id" jdbcType="VARCHAR"/>
+        <result property="dLogisticsTime" column="d_logistics_time" jdbcType="TIMESTAMP"/>
+        <result property="dReceiptTime" column="d_receipt_time" jdbcType="TIMESTAMP"/>
+        <result property="dCreateTime" column="d_create_time" jdbcType="TIMESTAMP"/>
+        <result property="dUpdateTime" column="d_update_time" jdbcType="TIMESTAMP"/>
+        <result property="dExpShipTime" column="d_exp_ship_time" jdbcType="TIMESTAMP"/>
+        <result property="nSettlement" column="n_settlement" jdbcType="INTEGER"/>
+        <result property="fkWhCompany" column="fk_wh_company" jdbcType="VARCHAR"/>
+        <result property="nAftersaleMoney" column="n_aftersale_money" jdbcType="NUMERIC"/>
+        <result property="nServiceMoney" column="n_service_money" jdbcType="NUMERIC"/>
+        <result property="nProductCost" column="n_product_cost" jdbcType="NUMERIC"/>
+        <result property="nLogisticsMoney" column="n_logistics_money" jdbcType="NUMERIC"/>
+        <result property="nProductReturn" column="n_product_return" jdbcType="INTEGER"/>
+        <result property="tradeType" column="trade_type" jdbcType="INTEGER"/>
+        <result property="promotionShopAmount" column="promotion_shop_amount" jdbcType="NUMERIC"/>
+        <result property="promotionPlatformAmount" column="promotion_platform_amount" jdbcType="NUMERIC"/>
+        <result property="shopCostAmount" column="shop_cost_amount" jdbcType="NUMERIC"/>
+        <result property="platformCostAmount" column="platform_cost_amount" jdbcType="NUMERIC"/>
+        <result property="promotionTalentAmount" column="promotion_talent_amount" jdbcType="NUMERIC"/>
+        <result property="promotionPayAmount" column="promotion_pay_amount" jdbcType="NUMERIC"/>
+        <result property="shopReceivableAmount" column="shop_receivable_amount" jdbcType="NUMERIC"/>
+        <result property="nChange" column="n_change" jdbcType="INTEGER"/>
+        <result property="nUser" column="n_user" jdbcType="INTEGER"/>
+        <result property="nMoneyRetrun" column="n_money_retrun" jdbcType="NUMERIC"/>
+        <result property="nUserDocking" column="n_user_docking" jdbcType="INTEGER"/>
+        <result property="dSettlement" column="d_settlement" jdbcType="TIMESTAMP"/>
+        <result property="payAmount" column="pay_amount" jdbcType="NUMERIC"/>
+        <result property="platformCoupon" column="platform_coupon" jdbcType="NUMERIC"/>
+        <result property="payPromotionAmount" column="pay_promotion_amount" jdbcType="NUMERIC"/>
+        <result property="orderRefund" column="order_refund" jdbcType="NUMERIC"/>
+        <result property="nPlatMoney" column="n_plat_money" jdbcType="NUMERIC"/>
+        <result property="realCommission" column="real_commission" jdbcType="NUMERIC"/>
+        <result property="nOfflineCommission" column="n_offline_commission" jdbcType="NUMERIC"/>
+        <result property="goodLearnChannelFee" column="good_learn_channel_fee" jdbcType="NUMERIC"/>
+        <result property="settleAmount" column="settle_amount" jdbcType="NUMERIC"/>
+        <result property="nLogisticsMoneyLook" column="n_logistics_money_look" jdbcType="NUMERIC"/>
+        <result property="fkWhPlatform" column="fk_wh_platform" jdbcType="VARCHAR"/>
+        <result property="estimatedComission" column="estimated_comission" jdbcType="NUMERIC"/>
+        <result property="doudianOpenId" column="doudian_open_id" jdbcType="VARCHAR"/>
+        <result property="biz" column="biz" jdbcType="INTEGER"/>
+        <result property="nOrdernum" column="n_ordernum" jdbcType="INTEGER"/>
+        <result property="nGetCommission" column="n_get_commission" jdbcType="INTEGER"/>
+        <result property="nProductCostNew" column="n_product_cost_new" jdbcType="NUMERIC"/>
+        <result property="nLogisticsMoneyNew" column="n_logistics_money_new" jdbcType="NUMERIC"/>
+        <result property="nServiceMoneyNew" column="n_service_money_new" jdbcType="NUMERIC"/>
+        <result property="cUserwork" column="c_userwork" jdbcType="VARCHAR"/>
+        <result property="cUsername" column="c_username" jdbcType="VARCHAR"/>
+        <result property="nSource" column="n_source" jdbcType="INTEGER"/>
+        <result property="cGrouid" column="c_grouid" jdbcType="VARCHAR"/>
+        <result property="cLeaderid" column="c_leaderid" jdbcType="VARCHAR"/>
+        <result property="fkWhGroup" column="fk_wh_group" jdbcType="VARCHAR"/>
+        <result property="fkSysUserLeader" column="fk_sys_user_leader" jdbcType="VARCHAR"/>
+        <result property="fkSysUser" column="fk_sys_user" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!-- 批量插入 -->
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into douyin_mhh.douyin_child(fk_id, order_id, shop_id, pid, final_status, open_id, product_id, product_name, product_pic, combo_id, combo_amount, combo_num, code, spec_desc, post_addr, post_code, post_receiver, post_tel, buyer_words, seller_words, shop_order_tag_ui, logistics_id, logistics_company_code, logistics_code, logistics_time, receipt_time, order_type, pre_sale_type, create_time, update_time, exp_ship_time, cancel_reason, pay_type, pay_time, post_amount, coupon_amount, shop_coupon_amount, coupon_meta_id, coupon_info, total_amount, platform_direct_reduction_platform_amount, is_comment, urge_cnt, b_type, sub_b_type, c_biz, is_insurance, c_type, cos_ratio, user_name, warehouse_id, out_warehouse_id, warehouse_supplier, shop_full_campaign, shop_campaign_id, shop_full_amount, platform_full_amount, platform_full_campaign, platform_campaign_id, cost_source, promotion_amount, source_type, shipped_num, item_ids, adjust_amount, d_date, ts, version, campaign_info, order_status, out_product_id, out_sku_id, alliance_info, author_id, author_name, theme_type, app_id, room_id, content_id, video_id, origin_id, cid, page_id, d_logistics_time, d_receipt_time, d_create_time, d_update_time, d_exp_ship_time, n_settlement, fk_wh_company, n_aftersale_money, n_service_money, n_product_cost, n_logistics_money, n_product_return, trade_type, promotion_shop_amount, promotion_platform_amount, shop_cost_amount, platform_cost_amount, promotion_talent_amount, promotion_pay_amount, shop_receivable_amount, n_change, n_user, n_money_retrun, n_user_docking, d_settlement, pay_amount, platform_coupon, pay_promotion_amount, order_refund, n_plat_money, real_commission, n_offline_commission, good_learn_channel_fee, settle_amount, n_logistics_money_look, fk_wh_platform, estimated_comission, doudian_open_id, biz, n_ordernum, n_get_commission, n_product_cost_new, n_logistics_money_new, n_service_money_new, c_userwork, c_username, n_source, c_grouid, c_leaderid, fk_wh_group, fk_sys_user_leader, fk_sys_user)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.fkId}, #{entity.orderId}, #{entity.shopId}, #{entity.pid}, #{entity.finalStatus}, #{entity.openId}, #{entity.productId}, #{entity.productName}, #{entity.productPic}, #{entity.comboId}, #{entity.comboAmount}, #{entity.comboNum}, #{entity.code}, #{entity.specDesc}, #{entity.postAddr}, #{entity.postCode}, #{entity.postReceiver}, #{entity.postTel}, #{entity.buyerWords}, #{entity.sellerWords}, #{entity.shopOrderTagUi}, #{entity.logisticsId}, #{entity.logisticsCompanyCode}, #{entity.logisticsCode}, #{entity.logisticsTime}, #{entity.receiptTime}, #{entity.orderType}, #{entity.preSaleType}, #{entity.createTime}, #{entity.updateTime}, #{entity.expShipTime}, #{entity.cancelReason}, #{entity.payType}, #{entity.payTime}, #{entity.postAmount}, #{entity.couponAmount}, #{entity.shopCouponAmount}, #{entity.couponMetaId}, #{entity.couponInfo}, #{entity.totalAmount}, #{entity.platformDirectReductionPlatformAmount}, #{entity.isComment}, #{entity.urgeCnt}, #{entity.bType}, #{entity.subBType}, #{entity.cBiz}, #{entity.isInsurance}, #{entity.cType}, #{entity.cosRatio}, #{entity.userName}, #{entity.warehouseId}, #{entity.outWarehouseId}, #{entity.warehouseSupplier}, #{entity.shopFullCampaign}, #{entity.shopCampaignId}, #{entity.shopFullAmount}, #{entity.platformFullAmount}, #{entity.platformFullCampaign}, #{entity.platformCampaignId}, #{entity.costSource}, #{entity.promotionAmount}, #{entity.sourceType}, #{entity.shippedNum}, #{entity.itemIds}, #{entity.adjustAmount}, #{entity.dDate}, #{entity.ts}, #{entity.version}, #{entity.campaignInfo}, #{entity.orderStatus}, #{entity.outProductId}, #{entity.outSkuId}, #{entity.allianceInfo}, #{entity.authorId}, #{entity.authorName}, #{entity.themeType}, #{entity.appId}, #{entity.roomId}, #{entity.contentId}, #{entity.videoId}, #{entity.originId}, #{entity.cid}, #{entity.pageId}, #{entity.dLogisticsTime}, #{entity.dReceiptTime}, #{entity.dCreateTime}, #{entity.dUpdateTime}, #{entity.dExpShipTime}, #{entity.nSettlement}, #{entity.fkWhCompany}, #{entity.nAftersaleMoney}, #{entity.nServiceMoney}, #{entity.nProductCost}, #{entity.nLogisticsMoney}, #{entity.nProductReturn}, #{entity.tradeType}, #{entity.promotionShopAmount}, #{entity.promotionPlatformAmount}, #{entity.shopCostAmount}, #{entity.platformCostAmount}, #{entity.promotionTalentAmount}, #{entity.promotionPayAmount}, #{entity.shopReceivableAmount}, #{entity.nChange}, #{entity.nUser}, #{entity.nMoneyRetrun}, #{entity.nUserDocking}, #{entity.dSettlement}, #{entity.payAmount}, #{entity.platformCoupon}, #{entity.payPromotionAmount}, #{entity.orderRefund}, #{entity.nPlatMoney}, #{entity.realCommission}, #{entity.nOfflineCommission}, #{entity.goodLearnChannelFee}, #{entity.settleAmount}, #{entity.nLogisticsMoneyLook}, #{entity.fkWhPlatform}, #{entity.estimatedComission}, #{entity.doudianOpenId}, #{entity.biz}, #{entity.nOrdernum}, #{entity.nGetCommission}, #{entity.nProductCostNew}, #{entity.nLogisticsMoneyNew}, #{entity.nServiceMoneyNew}, #{entity.cUserwork}, #{entity.cUsername}, #{entity.nSource}, #{entity.cGrouid}, #{entity.cLeaderid}, #{entity.fkWhGroup}, #{entity.fkSysUserLeader}, #{entity.fkSysUser})
+        </foreach>
+    </insert>
+    <!-- 批量插入或按主键更新 -->
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into douyin_mhh.douyin_child(fk_id, order_id, shop_id, pid, final_status, open_id, product_id, product_name, product_pic, combo_id, combo_amount, combo_num, code, spec_desc, post_addr, post_code, post_receiver, post_tel, buyer_words, seller_words, shop_order_tag_ui, logistics_id, logistics_company_code, logistics_code, logistics_time, receipt_time, order_type, pre_sale_type, create_time, update_time, exp_ship_time, cancel_reason, pay_type, pay_time, post_amount, coupon_amount, shop_coupon_amount, coupon_meta_id, coupon_info, total_amount, platform_direct_reduction_platform_amount, is_comment, urge_cnt, b_type, sub_b_type, c_biz, is_insurance, c_type, cos_ratio, user_name, warehouse_id, out_warehouse_id, warehouse_supplier, shop_full_campaign, shop_campaign_id, shop_full_amount, platform_full_amount, platform_full_campaign, platform_campaign_id, cost_source, promotion_amount, source_type, shipped_num, item_ids, adjust_amount, d_date, ts, version, campaign_info, order_status, out_product_id, out_sku_id, alliance_info, author_id, author_name, theme_type, app_id, room_id, content_id, video_id, origin_id, cid, page_id, d_logistics_time, d_receipt_time, d_create_time, d_update_time, d_exp_ship_time, n_settlement, fk_wh_company, n_aftersale_money, n_service_money, n_product_cost, n_logistics_money, n_product_return, trade_type, promotion_shop_amount, promotion_platform_amount, shop_cost_amount, platform_cost_amount, promotion_talent_amount, promotion_pay_amount, shop_receivable_amount, n_change, n_user, n_money_retrun, n_user_docking, d_settlement, pay_amount, platform_coupon, pay_promotion_amount, order_refund, n_plat_money, real_commission, n_offline_commission, good_learn_channel_fee, settle_amount, n_logistics_money_look, fk_wh_platform, estimated_comission, doudian_open_id, biz, n_ordernum, n_get_commission, n_product_cost_new, n_logistics_money_new, n_service_money_new, c_userwork, c_username, n_source, c_grouid, c_leaderid, fk_wh_group, fk_sys_user_leader, fk_sys_user)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.fkId}, #{entity.orderId}, #{entity.shopId}, #{entity.pid}, #{entity.finalStatus}, #{entity.openId}, #{entity.productId}, #{entity.productName}, #{entity.productPic}, #{entity.comboId}, #{entity.comboAmount}, #{entity.comboNum}, #{entity.code}, #{entity.specDesc}, #{entity.postAddr}, #{entity.postCode}, #{entity.postReceiver}, #{entity.postTel}, #{entity.buyerWords}, #{entity.sellerWords}, #{entity.shopOrderTagUi}, #{entity.logisticsId}, #{entity.logisticsCompanyCode}, #{entity.logisticsCode}, #{entity.logisticsTime}, #{entity.receiptTime}, #{entity.orderType}, #{entity.preSaleType}, #{entity.createTime}, #{entity.updateTime}, #{entity.expShipTime}, #{entity.cancelReason}, #{entity.payType}, #{entity.payTime}, #{entity.postAmount}, #{entity.couponAmount}, #{entity.shopCouponAmount}, #{entity.couponMetaId}, #{entity.couponInfo}, #{entity.totalAmount}, #{entity.platformDirectReductionPlatformAmount}, #{entity.isComment}, #{entity.urgeCnt}, #{entity.bType}, #{entity.subBType}, #{entity.cBiz}, #{entity.isInsurance}, #{entity.cType}, #{entity.cosRatio}, #{entity.userName}, #{entity.warehouseId}, #{entity.outWarehouseId}, #{entity.warehouseSupplier}, #{entity.shopFullCampaign}, #{entity.shopCampaignId}, #{entity.shopFullAmount}, #{entity.platformFullAmount}, #{entity.platformFullCampaign}, #{entity.platformCampaignId}, #{entity.costSource}, #{entity.promotionAmount}, #{entity.sourceType}, #{entity.shippedNum}, #{entity.itemIds}, #{entity.adjustAmount}, #{entity.dDate}, #{entity.ts}, #{entity.version}, #{entity.campaignInfo}, #{entity.orderStatus}, #{entity.outProductId}, #{entity.outSkuId}, #{entity.allianceInfo}, #{entity.authorId}, #{entity.authorName}, #{entity.themeType}, #{entity.appId}, #{entity.roomId}, #{entity.contentId}, #{entity.videoId}, #{entity.originId}, #{entity.cid}, #{entity.pageId}, #{entity.dLogisticsTime}, #{entity.dReceiptTime}, #{entity.dCreateTime}, #{entity.dUpdateTime}, #{entity.dExpShipTime}, #{entity.nSettlement}, #{entity.fkWhCompany}, #{entity.nAftersaleMoney}, #{entity.nServiceMoney}, #{entity.nProductCost}, #{entity.nLogisticsMoney}, #{entity.nProductReturn}, #{entity.tradeType}, #{entity.promotionShopAmount}, #{entity.promotionPlatformAmount}, #{entity.shopCostAmount}, #{entity.platformCostAmount}, #{entity.promotionTalentAmount}, #{entity.promotionPayAmount}, #{entity.shopReceivableAmount}, #{entity.nChange}, #{entity.nUser}, #{entity.nMoneyRetrun}, #{entity.nUserDocking}, #{entity.dSettlement}, #{entity.payAmount}, #{entity.platformCoupon}, #{entity.payPromotionAmount}, #{entity.orderRefund}, #{entity.nPlatMoney}, #{entity.realCommission}, #{entity.nOfflineCommission}, #{entity.goodLearnChannelFee}, #{entity.settleAmount}, #{entity.nLogisticsMoneyLook}, #{entity.fkWhPlatform}, #{entity.estimatedComission}, #{entity.doudianOpenId}, #{entity.biz}, #{entity.nOrdernum}, #{entity.nGetCommission}, #{entity.nProductCostNew}, #{entity.nLogisticsMoneyNew}, #{entity.nServiceMoneyNew}, #{entity.cUserwork}, #{entity.cUsername}, #{entity.nSource}, #{entity.cGrouid}, #{entity.cLeaderid}, #{entity.fkWhGroup}, #{entity.fkSysUserLeader}, #{entity.fkSysUser})
+        </foreach>
+        on duplicate key update
+         fk_id = values(fk_id) , order_id = values(order_id) , shop_id = values(shop_id) , pid = values(pid) , final_status = values(final_status) , open_id = values(open_id) , product_id = values(product_id) , product_name = values(product_name) , product_pic = values(product_pic) , combo_id = values(combo_id) , combo_amount = values(combo_amount) , combo_num = values(combo_num) , code = values(code) , spec_desc = values(spec_desc) , post_addr = values(post_addr) , post_code = values(post_code) , post_receiver = values(post_receiver) , post_tel = values(post_tel) , buyer_words = values(buyer_words) , seller_words = values(seller_words) , shop_order_tag_ui = values(shop_order_tag_ui) , logistics_id = values(logistics_id) , logistics_company_code = values(logistics_company_code) , logistics_code = values(logistics_code) , logistics_time = values(logistics_time) , receipt_time = values(receipt_time) , order_type = values(order_type) , pre_sale_type = values(pre_sale_type) , create_time = values(create_time) , update_time = values(update_time) , exp_ship_time = values(exp_ship_time) , cancel_reason = values(cancel_reason) , pay_type = values(pay_type) , pay_time = values(pay_time) , post_amount = values(post_amount) , coupon_amount = values(coupon_amount) , shop_coupon_amount = values(shop_coupon_amount) , coupon_meta_id = values(coupon_meta_id) , coupon_info = values(coupon_info) , total_amount = values(total_amount) , platform_direct_reduction_platform_amount = values(platform_direct_reduction_platform_amount) , is_comment = values(is_comment) , urge_cnt = values(urge_cnt) , b_type = values(b_type) , sub_b_type = values(sub_b_type) , c_biz = values(c_biz) , is_insurance = values(is_insurance) , c_type = values(c_type) , cos_ratio = values(cos_ratio) , user_name = values(user_name) , warehouse_id = values(warehouse_id) , out_warehouse_id = values(out_warehouse_id) , warehouse_supplier = values(warehouse_supplier) , shop_full_campaign = values(shop_full_campaign) , shop_campaign_id = values(shop_campaign_id) , shop_full_amount = values(shop_full_amount) , platform_full_amount = values(platform_full_amount) , platform_full_campaign = values(platform_full_campaign) , platform_campaign_id = values(platform_campaign_id) , cost_source = values(cost_source) , promotion_amount = values(promotion_amount) , source_type = values(source_type) , shipped_num = values(shipped_num) , item_ids = values(item_ids) , adjust_amount = values(adjust_amount) , d_date = values(d_date) , ts = values(ts) , version = values(version) , campaign_info = values(campaign_info) , order_status = values(order_status) , out_product_id = values(out_product_id) , out_sku_id = values(out_sku_id) , alliance_info = values(alliance_info) , author_id = values(author_id) , author_name = values(author_name) , theme_type = values(theme_type) , app_id = values(app_id) , room_id = values(room_id) , content_id = values(content_id) , video_id = values(video_id) , origin_id = values(origin_id) , cid = values(cid) , page_id = values(page_id) , d_logistics_time = values(d_logistics_time) , d_receipt_time = values(d_receipt_time) , d_create_time = values(d_create_time) , d_update_time = values(d_update_time) , d_exp_ship_time = values(d_exp_ship_time) , n_settlement = values(n_settlement) , fk_wh_company = values(fk_wh_company) , n_aftersale_money = values(n_aftersale_money) , n_service_money = values(n_service_money) , n_product_cost = values(n_product_cost) , n_logistics_money = values(n_logistics_money) , n_product_return = values(n_product_return) , trade_type = values(trade_type) , promotion_shop_amount = values(promotion_shop_amount) , promotion_platform_amount = values(promotion_platform_amount) , shop_cost_amount = values(shop_cost_amount) , platform_cost_amount = values(platform_cost_amount) , promotion_talent_amount = values(promotion_talent_amount) , promotion_pay_amount = values(promotion_pay_amount) , shop_receivable_amount = values(shop_receivable_amount) , n_change = values(n_change) , n_user = values(n_user) , n_money_retrun = values(n_money_retrun) , n_user_docking = values(n_user_docking) , d_settlement = values(d_settlement) , pay_amount = values(pay_amount) , platform_coupon = values(platform_coupon) , pay_promotion_amount = values(pay_promotion_amount) , order_refund = values(order_refund) , n_plat_money = values(n_plat_money) , real_commission = values(real_commission) , n_offline_commission = values(n_offline_commission) , good_learn_channel_fee = values(good_learn_channel_fee) , settle_amount = values(settle_amount) , n_logistics_money_look = values(n_logistics_money_look) , fk_wh_platform = values(fk_wh_platform) , estimated_comission = values(estimated_comission) , doudian_open_id = values(doudian_open_id) , biz = values(biz) , n_ordernum = values(n_ordernum) , n_get_commission = values(n_get_commission) , n_product_cost_new = values(n_product_cost_new) , n_logistics_money_new = values(n_logistics_money_new) , n_service_money_new = values(n_service_money_new) , c_userwork = values(c_userwork) , c_username = values(c_username) , n_source = values(n_source) , c_grouid = values(c_grouid) , c_leaderid = values(c_leaderid) , fk_wh_group = values(fk_wh_group) , fk_sys_user_leader = values(fk_sys_user_leader) , fk_sys_user = values(fk_sys_user)     </insert>
+
+</mapper>
+
