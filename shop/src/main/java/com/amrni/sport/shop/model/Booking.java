@@ -1,6 +1,8 @@
 package com.amrni.sport.shop.model;
 
+import com.amrni.sport.shop.base.AbstractBaseEntity;
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
@@ -15,27 +17,44 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@TableName("test")
-@Entity(name = "test")
+@TableName("Booking")
+@Entity(name = "Booking")
 @Data
 @EntityListeners(AuditingEntityListener.class)
 @NoArgsConstructor
-public class Test implements Serializable {
+public class Booking extends AbstractBaseEntity implements Serializable {
 
     @Id
     //    @GenericGenerator(name = "id",strategy = "com.speeder.common.config.SnowIdGenerator")
     //    @GeneratedValue(generator = "id")
     @TableId(type = IdType.AUTO)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
-    private String name;
+    private Integer userId;
 
-    private Integer version;
+    private Integer courseId;
 
-    private LocalDateTime created;
+    private Integer teacherId;
 
-    private LocalDateTime modified;
+    private LocalDateTime bookingStartTime;
 
+    private LocalDateTime bookingEndTime;
+
+    private LocalDateTime bookingTime;
+
+    private LocalDateTime completeTime;
+
+    private LocalDateTime cancelTime;
+
+    private String bookStatus;
+
+    @TableField(exist = false)
+    @Transient
+    private Course course;
+
+    @TableField(exist = false)
+    @Transient
+    private Teacher teacher;
 }
 

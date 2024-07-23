@@ -15,27 +15,23 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@TableName("test")
-@Entity(name = "test")
+@TableName("Course")
+@Entity(name = "Course")
 @Data
 @EntityListeners(AuditingEntityListener.class)
 @NoArgsConstructor
-public class Test implements Serializable {
+public class Course implements Serializable {
 
     @Id
     //    @GenericGenerator(name = "id",strategy = "com.speeder.common.config.SnowIdGenerator")
     //    @GeneratedValue(generator = "id")
     @TableId(type = IdType.AUTO)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
-    private String name;
+    private String courseName;
 
-    private Integer version;
-
-    private LocalDateTime created;
-
-    private LocalDateTime modified;
+    private String courseImage;
 
 }
 

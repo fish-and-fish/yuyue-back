@@ -20,7 +20,8 @@ public class ThirdPartyHandlerInterceptor implements HandlerInterceptor {
         log.debug("ThirdPart_开始鉴权,{}", handler);
         log.debug("ThirdPart_请求ContentType,{}", contentType);
 
-        throw new MyRuntimeException("error");
+        return true;
+//        throw new MyRuntimeException("error");
     }
 
 }

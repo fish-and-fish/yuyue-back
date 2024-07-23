@@ -2,9 +2,9 @@ package com.amrni.sport.shop.jpa;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.amrni.sport.shop.model.Test;
+import com.amrni.sport.shop.model.User;
 
-public interface TestJpa extends JpaRepository<Test, Integer> {
+public interface UserJpa extends JpaRepository<User, Integer> {
 
 
 }

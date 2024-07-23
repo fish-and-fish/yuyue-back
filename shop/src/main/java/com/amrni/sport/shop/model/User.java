@@ -1,5 +1,6 @@
 package com.amrni.sport.shop.model;
 
+import com.amrni.sport.shop.base.AbstractBaseEntity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -15,27 +16,26 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@TableName("test")
-@Entity(name = "test")
+@TableName("User")
+@Entity(name = "User")
 @Data
 @EntityListeners(AuditingEntityListener.class)
 @NoArgsConstructor
-public class Test implements Serializable {
+public class User extends AbstractBaseEntity implements Serializable {
 
     @Id
     //    @GenericGenerator(name = "id",strategy = "com.speeder.common.config.SnowIdGenerator")
     //    @GeneratedValue(generator = "id")
     @TableId(type = IdType.AUTO)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
-    private String name;
+    private String wechatId;
 
-    private Integer version;
+    private String wechatName;
 
-    private LocalDateTime created;
+    private String wechatAvatar;
 
-    private LocalDateTime modified;
 
 }
 

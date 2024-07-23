@@ -25,16 +25,16 @@ import lombok.Setter;
 @EntityListeners(AuditingEntityListener.class)
 public abstract class AbstractBaseEntity<T extends Model<?>> extends Model<T> implements Serializable{
 
-    @Version
-    @com.baomidou.mybatisplus.annotation.Version
-    private Integer version;
+//    @Version
+//    @com.baomidou.mybatisplus.annotation.Version
+//    private Integer version;
 
     @CreatedDate
     @TableField(fill = FieldFill.INSERT)
-    private LocalDateTime created;
+    private LocalDateTime createTime;
 
     @LastModifiedDate
     @TableField(fill = FieldFill.INSERT_UPDATE)
-    private LocalDateTime modified;
+    private LocalDateTime updateTime;
 
 }

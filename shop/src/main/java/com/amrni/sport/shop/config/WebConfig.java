@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 import javax.annotation.Resource;
 
+import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.format.FormatterRegistry;
@@ -11,6 +13,9 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 
 import static java.time.format.DateTimeFormatter.ofPattern;
 
@@ -29,17 +34,17 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addInterceptor(thirdPartyHandlerInterceptor).addPathPatterns("/**");
     }
 
-//    /**
-//     * 配置LocalDateTime类型序列化与反序列化
-//     */
-//    @Bean
-//    public Jackson2ObjectMapperBuilderCustomizer jsonCustomizer() {
-//        return builder -> {
-//            builder.serializers(new LocalDateTimeSerializer(ofPattern(LOCAL_DATE_TIME_PATTERN)));
-//            builder.deserializers(new LocalDateTimeDeserializer(ofPattern(LOCAL_DATE_TIME_PATTERN)));
-//        };
-//    }
-//
+    /**
+     * 配置LocalDateTime类型序列化与反序列化
+     */
+    @Bean
+    public Jackson2ObjectMapperBuilderCustomizer jsonCustomizer() {
+        return builder -> {
+            builder.serializers(new LocalDateTimeSerializer(ofPattern(LOCAL_DATE_TIME_PATTERN)));
+            builder.deserializers(new LocalDateTimeDeserializer(ofPattern(LOCAL_DATE_TIME_PATTERN)));
+        };
+    }
+
 //    @Bean
 //    @Primary
 //    public ObjectMapper serializingObjectMapper() {
