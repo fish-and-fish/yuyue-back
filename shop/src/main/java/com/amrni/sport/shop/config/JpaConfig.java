@@ -2,10 +2,6 @@ package com.amrni.sport.shop.config;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Properties;
-
-import javax.annotation.Resource;
-import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;

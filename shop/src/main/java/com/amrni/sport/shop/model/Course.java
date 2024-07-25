@@ -1,5 +1,6 @@
 package com.amrni.sport.shop.model;
 
+import com.amrni.sport.shop.base.AbstractBaseEntity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -20,7 +21,7 @@ import java.time.LocalDateTime;
 @Data
 @EntityListeners(AuditingEntityListener.class)
 @NoArgsConstructor
-public class Course implements Serializable {
+public class Course extends AbstractBaseEntity implements Serializable {
 
     @Id
     //    @GenericGenerator(name = "id",strategy = "com.speeder.common.config.SnowIdGenerator")
