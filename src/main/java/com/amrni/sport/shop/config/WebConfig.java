@@ -1,6 +1,7 @@
 package com.amrni.sport.shop.config;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javax.annotation.Resource;
 
@@ -66,6 +67,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addFormatters(FormatterRegistry registry) {
         registry.addConverter(localDateConvert());
+        registry.addConverter(localDateTimeConvert());
     }
 
     public Converter<String, LocalDate> localDateConvert() {
@@ -75,6 +77,19 @@ public class WebConfig implements WebMvcConfigurer {
             public LocalDate convert(String source) {
                 if (StringUtils.hasText(source)) {
 //                    return LocalDate.parse(source, ofPattern("yyyy-MM-dd"));
+                }
+                return null;
+            }
+        };
+    }
+
+    public Converter<String, LocalDateTime> localDateTimeConvert() {
+        // 不能替换为lambda表达式
+        return new Converter<String, LocalDateTime>() {
+            @Override
+            public LocalDateTime convert(String source) {
+                if (StringUtils.hasText(source)) {
+                    //                    return LocalDate.parse(source, ofPattern("yyyy-MM-dd"));
                 }
                 return null;
             }
