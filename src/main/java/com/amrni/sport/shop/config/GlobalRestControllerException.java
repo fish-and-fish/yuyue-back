@@ -22,7 +22,7 @@ public class GlobalRestControllerException {
     public Map errorHandler(Exception e) {
         log.error("exception -- error log，{}", e.getMessage(), e);
         Map<String, String> map = Maps.newHashMap();
-        map.put("sucess", "falie");
+        map.put("success", "fail");
         return map;
     }
 
@@ -30,7 +30,7 @@ public class GlobalRestControllerException {
     public Map errorHandler1(Exception e) {
         log.error("exception -- error log，{}", e.getMessage(), e);
         Map<String, String> map = Maps.newHashMap();
-        map.put("sucesss", "truesss");
+        map.put("success", "fail");
         return map;
     }
 

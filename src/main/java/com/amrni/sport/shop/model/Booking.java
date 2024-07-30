@@ -24,6 +24,10 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class Booking extends AbstractBaseEntity implements Serializable {
 
+    public static final String BOOKING = "BOOKING";
+    public static final String COMPLETE = "COMPLETE";
+    public static final String CANCEL = "CANCELLED";
+
     @Id
     //    @GenericGenerator(name = "id",strategy = "com.speeder.common.config.SnowIdGenerator")
     //    @GeneratedValue(generator = "id")
@@ -48,6 +52,11 @@ public class Booking extends AbstractBaseEntity implements Serializable {
     private LocalDateTime cancelTime;
 
     private String bookStatus;
+
+    public void cancel(){
+        this.bookStatus = CANCEL;
+        this.cancelTime = LocalDateTime.now();
+    }
 
     @TableField(exist = false)
     @Transient

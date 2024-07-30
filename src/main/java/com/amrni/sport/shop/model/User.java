@@ -2,6 +2,7 @@ package com.amrni.sport.shop.model;
 
 import com.amrni.sport.shop.base.AbstractBaseEntity;
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
@@ -30,12 +31,9 @@ public class User extends AbstractBaseEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String wechatId;
+    private String unionid;
 
-    private String wechatName;
-
-    private String wechatAvatar;
-
+    private String openid;
 
 }
 

@@ -6,6 +6,7 @@ import com.amrni.sport.shop.model.User;
 
 public interface UserJpa extends JpaRepository<User, Integer> {
 
+    User findByOpenid(String openId);
 
 }
 

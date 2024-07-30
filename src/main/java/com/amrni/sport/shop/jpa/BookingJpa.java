@@ -9,5 +9,7 @@ import com.amrni.sport.shop.model.Booking;
 public interface BookingJpa extends JpaRepository<Booking, Integer> {
 
     List<Booking> findByUserIdAndBookStatus(Integer userId, String status);
+
+    Booking findByUserIdAndId(Integer userId, Integer id);
 }
 
