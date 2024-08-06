@@ -19,14 +19,17 @@ public class FixSchedule {
 
     private final BookingJpa bookingJpa;
 
-//    @Scheduled(cron = "0 0 0/1 * * ? ")
-    @Scheduled(fixedDelay = 1000)
+    @Scheduled(cron = "0 0 0/1 * * ? ")
+//    @Scheduled(fixedDelay = 1000)
     public void updateBooking() {
+        log.info("updateBooking start");
         List<Booking> allBookingList = bookingJpa.findByBookStatusAndBookingEndTimeLessThan(Booking.BOOKING, LocalDateTime.now());
         allBookingList.forEach(booking -> {
             booking.setBookStatus(Booking.COMPLETE);
             booking.setCompleteTime(booking.getBookingEndTime());
         });
         bookingJpa.saveAll(allBookingList);
+        log.info("updateBooking end");
+
     }
 }

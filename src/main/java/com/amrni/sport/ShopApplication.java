@@ -19,11 +19,13 @@ public class ShopApplication implements CommandLineRunner {
         SpringApplication.run(ShopApplication.class, args);
     }
 
+
     @Override
-    public void run(String... args) throws Exception {
-        System.out.println("version:" + "0806");
-        System.out.println("version:" + "0806");
-        System.out.println("version:" + "0806");
-        System.out.println("version:" + "0806");
+    public void run(String... args) {
+        String a = "0806111";
+        System.out.println("version:" + a);
+        System.out.println("version:" + a);
+        System.out.println("version:" + a);
+        System.out.println("version:" + a);
     }
 }

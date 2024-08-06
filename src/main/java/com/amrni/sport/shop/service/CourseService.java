@@ -13,6 +13,7 @@ import com.amrni.sport.shop.command.LoginCmd;
 import com.amrni.sport.shop.command.OkHttpUtil;
 import com.amrni.sport.shop.common.Properties;
 import com.amrni.sport.shop.common.Stream2Utils;
+import com.amrni.sport.shop.exception.MyRuntimeException;
 import com.amrni.sport.shop.jpa.BookingJpa;
 import com.amrni.sport.shop.jpa.CourseJpa;
 import com.amrni.sport.shop.jpa.CourseTeacherJpa;
@@ -52,6 +53,9 @@ public class CourseService {
     }
 
     public String booking(User user, BookingCmd bookingCmd) {
+        if(bookingCmd.getEndTime().isBefore(LocalDateTime.now())){
+            throw new MyRuntimeException("不能预约当前时间之前的时间段");
+        }
         Booking booking = new Booking();
         booking.setUserId(user.getId());
         booking.setCourseId(bookingCmd.getCourseId());
