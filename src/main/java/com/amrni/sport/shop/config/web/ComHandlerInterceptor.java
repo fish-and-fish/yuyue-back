@@ -26,8 +26,9 @@ public class ComHandlerInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String contentType = request.getContentType();
-        log.debug("ThirdPart_开始鉴权,{}", handler);
-        log.debug("ThirdPart_请求ContentType,{}", contentType);
+        log.info("开始鉴权,{}", handler);
+        log.info("request url,{}", request.getRequestURL());
+        log.info("请求ContentType,{}", contentType);
 
         if(request.getRequestURL().toString().contains("login")){
             return true;
