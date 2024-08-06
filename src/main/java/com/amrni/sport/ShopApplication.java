@@ -21,5 +21,6 @@ public class ShopApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        System.out.println("version:" + "0806");
     }
 }
