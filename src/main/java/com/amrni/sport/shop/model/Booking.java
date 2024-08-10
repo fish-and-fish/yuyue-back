@@ -15,7 +15,9 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @TableName("Booking")
 @Entity(name = "Booking")
@@ -42,6 +44,18 @@ public class Booking extends AbstractBaseEntity implements Serializable {
     private Integer teacherId;
 
     private LocalDateTime bookingStartTime;
+
+    public LocalDate getBookingDate(){
+        return this.bookingStartTime.toLocalDate();
+    }
+
+    public LocalTime getBookingStart(){
+        return this.bookingStartTime.toLocalTime();
+    }
+
+    public LocalTime getBookingEnd(){
+        return this.bookingEndTime.toLocalTime();
+    }
 
     private LocalDateTime bookingEndTime;
 
