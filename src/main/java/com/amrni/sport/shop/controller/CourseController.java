@@ -2,8 +2,8 @@ package com.amrni.sport.shop.controller;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,7 +15,6 @@ import com.amrni.sport.shop.command.BaseIdCmd;
 import com.amrni.sport.shop.command.BookingCmd;
 import com.amrni.sport.shop.command.LoginCmd;
 import com.amrni.sport.shop.common.ApiResponse;
-import com.amrni.sport.shop.common.Stream2Utils;
 import com.amrni.sport.shop.model.Booking;
 import com.amrni.sport.shop.model.Course;
 import com.amrni.sport.shop.model.Teacher;
@@ -24,6 +23,7 @@ import com.amrni.sport.shop.service.CourseService;
 import com.amrni.sport.shop.vo.BookingInfoVo;
 import com.amrni.sport.shop.vo.UserVo;
 
+import cn.hutool.core.util.StrUtil;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -71,6 +71,9 @@ public class CourseController {
     @GetMapping("/book/list")
     public ApiResponse<List<Booking>> bookList(User user,
                                                @RequestParam String status) {
+        if (StrUtil.isBlank(status) || Objects.equals(status, "undefined")) {
+            status = Booking.BOOKING;
+        }
         return new ApiResponse<>(courseService.bookList(user, status), true, "成功获取课程列表");
     }
 }
