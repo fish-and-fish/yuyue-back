@@ -22,7 +22,7 @@ public class ShopApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        String a = "0806111";
+        String a = "0813111";
         System.out.println("version:" + a);
         System.out.println("version:" + a);
         System.out.println("version:" + a);
