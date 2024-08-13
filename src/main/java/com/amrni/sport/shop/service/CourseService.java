@@ -69,7 +69,7 @@ public class CourseService {
     }
 
     public List<Booking> bookList(User user, String status) {
-        List<Booking> list = bookingJpa.findByUserIdAndBookStatus(user.getId(), status);
+        List<Booking> list = bookingJpa.findByUserIdAndBookStatusOrderByIdDesc(user.getId(), status);
 
         List<Integer> courseIdList = Stream2Utils.map(list, Booking::getCourseId);
         List<Integer> teacherIdList = Stream2Utils.map(list, Booking::getTeacherId);
@@ -101,8 +101,8 @@ public class CourseService {
 
     public BookingInfoVo bookInfo(User user) {
         Integer id = user.getId();
-        int bookingNum = bookingJpa.findByUserIdAndBookStatus(id, Booking.BOOKING).size();
-        int completeNum = bookingJpa.findByUserIdAndBookStatus(id, Booking.COMPLETE).size();
+        int bookingNum = bookingJpa.findByUserIdAndBookStatusOrderByIdDesc(id, Booking.BOOKING).size();
+        int completeNum = bookingJpa.findByUserIdAndBookStatusOrderByIdDesc(id, Booking.COMPLETE).size();
         BookingInfoVo bookingInfoVo = new BookingInfoVo();
         bookingInfoVo.setBookingCourseNum(bookingNum);
         bookingInfoVo.setFinishCourseNum(completeNum);

@@ -9,7 +9,7 @@ import com.amrni.sport.shop.model.Booking;
 
 public interface BookingJpa extends JpaRepository<Booking, Integer> {
 
-    List<Booking> findByUserIdAndBookStatus(Integer userId, String status);
+    List<Booking> findByUserIdAndBookStatusOrderByIdDesc(Integer userId, String status);
 
     List<Booking> findByBookStatusAndBookingEndTimeLessThan(String status, LocalDateTime endTime);
 
